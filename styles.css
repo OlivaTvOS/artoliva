@@ -1,0 +1,179 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    
+}
+
+body {
+    position: relative;
+    font-family: "Turret Road", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Blurred fixed background using a pseudo-element */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("mid/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: blur(8px);
+    transform: scale(1.03);
+    z-index: -1;
+}
+
+#main{
+    display: flex;
+    justify-content:space-between;
+    padding: 50px;
+    color:white;
+}
+
+.oliva{
+    color: white;
+    border-radius: 60px;
+    font-size: 30px;
+}
+
+.oliva:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.oliva:not(:hover) {
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.black{
+    color: black;
+    text-decoration: none;
+    border: 1px solid goldenrod;
+    border-radius: 60px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: goldenrod;
+    box-sizing: border-box;
+}
+
+.black:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.black:not(:hover) {
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+#function{
+    padding: 50px;
+    margin-top: 40px;
+}
+
+.ui{
+    font-size: 35px;
+    margin: 0;
+    color: goldenrod;
+}
+
+.me{
+    font-size: 120px;
+    margin: 0;
+    color: white;
+}
+
+#contact{
+    text-decoration: none;
+}
+
+.link1{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    padding: 50px;
+    margin-top: -80px;
+    color: white;
+}
+
+.link2{
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+    padding: 50px;
+    margin-top: -60px;
+    color: white;
+}
+
+/* Place icon next to contact text inside each link */
+.link1 a, .link2 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* small gap between icon and text */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove default margins from inline labels (now spans) */
+.link1 a span, .link2 a span {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Slightly reduce icon size to better fit beside text */
+.link1 a i, .link2 a i {
+    font-size: 1.05em;
+    color: #FFD43B; /* set icon color centrally instead of inline styles */
+}
+
+/* Make all links white and remove default blue color */
+a, a:visited {
+    color: white;
+}
+
+/* Keep existing decorations unless overridden by specific selectors */
+a:focus {
+    outline: 2px dashed rgba(255,255,255,0.6);
+    outline-offset: 2px;
+}
+
+/* Photo at the right of the name */
+.name-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.name-row .name-text{
+    display: flex;
+    flex-direction: column;
+}
+
+#foto, .foto-eu{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+    .name-row{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    #foto, .foto-eu{
+        width: 96px;
+        height: 96px;
+    }
+    .me{ font-size: 64px; }
+}
