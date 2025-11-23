@@ -127,12 +127,6 @@ body::before {
     font-size: 1rem;
 }
 
-/* Slightly reduce icon size to better fit beside text */
-.link1 a i, .link2 a i {
-    font-size: 1.05em;
-    color: #FFD43B; /* set icon color centrally instead of inline styles */
-}
-
 /* Make all links white and remove default blue color */
 a, a:visited {
     color: white;
@@ -166,6 +160,18 @@ a:focus {
 }
 
 /* Responsive breakpoints: phones, tablets, notebooks/desktops */
+
+    /* Change text selection color (used when user highlights text to copy) */
+    ::selection{
+        background: rgba(255, 212, 59, 0.85); /* golden background */
+        color: #000000; /* black text for contrast */
+    }
+
+    /* Firefox-specific selector */
+    ::-moz-selection{
+        background: rgba(255, 212, 59, 0.85);
+        color: #000000;
+    }
 
 /* Small phones (up to 480px) */
 @media (max-width: 480px) {
