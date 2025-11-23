@@ -165,15 +165,84 @@ a:focus {
     flex-shrink: 0;
 }
 
-@media (max-width: 700px) {
+/* Responsive breakpoints: phones, tablets, notebooks/desktops */
+
+/* Small phones (up to 480px) */
+@media (max-width: 480px) {
+    html, body { font-size: 14px; }
+    #main{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+    }
     .name-row{
         flex-direction: column-reverse;
         align-items: flex-start;
-        gap: 12px;
+        gap: 10px;
     }
+    .name-row .name-text .ui{ font-size: 18px; }
+    .me{ font-size: 42px; }
     #foto, .foto-eu{
-        width: 96px;
-        height: 96px;
+        width: 76px;
+        height: 76px;
     }
-    .me{ font-size: 64px; }
+    .link1, .link2{
+        gap: 20px;
+        padding: 20px;
+        margin-top: -30px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Small tablets / large phones (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    html, body { font-size: 15px; }
+    #main{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+    }
+    .name-row{
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+    .me{ font-size: 72px; }
+    #foto, .foto-eu{
+        width: 100px;
+        height: 100px;
+    }
+    .link1, .link2{
+        gap: 36px;
+        padding: 30px;
+        margin-top: -50px;
+    }
+}
+
+/* Laptops and small desktops (from 769px up to 1279px) */
+@media (min-width: 769px) and (max-width: 1279px) {
+    html, body { font-size: 16px; }
+    #main{
+        flex-direction: row;
+        align-items: center;
+        padding: 40px;
+    }
+    .name-row{ gap: 20px; }
+    .me{ font-size: 96px; }
+    #foto, .foto-eu{ width: 120px; height: 120px; }
+    .link1, .link2{ gap: 60px; padding: 40px; margin-top: -60px; }
+}
+
+/* Large screens / notebooks starting from 1280px (approx 720p width = 1280) */
+@media (min-width: 1280px) {
+    html, body { font-size: 16px; }
+    #main{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 60px 80px;
+    }
+    .name-row{ gap: 28px; }
+    .me{ font-size: 120px; }
+    #foto, .foto-eu{ width: 160px; height: 160px; }
+    .link1, .link2{ gap: 80px; padding: 50px; margin-top: -80px; }
 }
